@@ -60,6 +60,27 @@ exports.addOrder = async (req, res) => {
     }
 }
 
+exports.updateOrder = async (req, res) => {
+    const param = req.params.id;
+    const query = { _id: param }
+
+    console.log(req.body, param);
+    const updatedData = req.body;
+    const push = { $set: updatedData }
+
+    try {
+        await Order.findOneAndUpdate(query, push);
+        res.status(200).json({
+            success: true,
+            message: 'Order Updated Successfully!'
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
 exports.deleteOrderById = async (req, res) => {
     const param = req.params.id;
     console.log(param);

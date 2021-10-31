@@ -14,6 +14,7 @@ const router = express.Router();
 router.get('/order-list', controller.orderList);
 router.get('/order-list/:id', controller.orderListById);
 router.post('/add-order', controller.addOrder);
+router.put('/update-order/:id', controller.updateOrder);
 router.delete('/delete-order/:id', controller.deleteOrderById);
 
 // Export All router..

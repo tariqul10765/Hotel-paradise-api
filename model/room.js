@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema(
     {
-        deviceId: {
-            type: String,
-            required: true
-        },
         title: {
             type: String,
             required: true
